@@ -1,7 +1,9 @@
 # everlasting-hey-yo
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)][license]
+[![Hey, Yo!](https://img.shields.io/badge/Hey-Yo!-orange.svg?style=flat-square)][hey-yo]
 
 [license]: https://github.com/toricls/everlasting-hey-yo/blob/master/LICENSE
+[hey-yo]: https://github.com/topics/hey-yo
 Everlasting "Hey, Yo!" per second
 
 ## Usage
