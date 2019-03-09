@@ -18,6 +18,21 @@ Hey, Yo!
 ...
 ```
 
+### Hey-yo traps SIGTERM
+```
+$ docker stop YOUR-CONTAINER-ID
+```
+
+then, you'll see
+```
+Hey, Hey, Hey, Yo!!!
+```
+
+## So, what is this?
+Hey-yo is meant to test time-diff between SIGTERM and SIGKILL sent by `docker stop` and its subsequences.
+
+You can use Hey-yo to find whether your container orchestration tool issues docker stop with `--stop` option (or, docker run with `--stop-timeout` option) as expected.
+
 ## Build your own Hey-Yo
 ```
 $ docker build -t YOUR-NAME/everlasting-hey-yo .
