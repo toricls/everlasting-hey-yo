@@ -41,7 +41,7 @@ You can use Hey-yo to find whether your container orchestration tool issues dock
 ## Build your own Hey-Yo
 ```
 $ docker build -t YOUR-NAME/everlasting-hey-yo .
-$ docker push YOUR-NAME/everlasting-hey-yo .
+$ docker push YOUR-NAME/everlasting-hey-yo
 ```
 
 ## Contribution
