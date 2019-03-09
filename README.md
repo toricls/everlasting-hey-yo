@@ -25,7 +25,12 @@ $ docker stop YOUR-CONTAINER-ID
 
 then, you'll see
 ```
-Hey, Hey, Hey, Yo!!!
+...
+Hey, Yo!
+Hey, Hey, Hey, Yo!!! 👈 You'll find this line!
+Hey, Yo!
+Hey, Yo!
+...
 ```
 
 ## So, what is this?
