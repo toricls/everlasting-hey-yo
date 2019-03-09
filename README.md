@@ -34,7 +34,7 @@ Hey, Yo!
 ```
 
 ## So, what is this?
-Hey-yo is meant to test time-diff between SIGTERM and SIGKILL sent by `docker stop` and its subsequences.
+Hey-yo is meant to test time-diff between SIGTERM sent by `docker stop` and its subsequent SIGKILL.
 
 You can use Hey-yo to find whether your container orchestration tool issues docker stop with `--stop` option (or, docker run with `--stop-timeout` option) as expected.
 
