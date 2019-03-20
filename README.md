@@ -54,7 +54,7 @@ $ docker push YOUR-NAME/everlasting-hey-yo
 
 ## Licence
 
-[MIT](LICENCE)
+[MIT](LICENSE)
 
 ## Author
 
