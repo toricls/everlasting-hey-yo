@@ -19,15 +19,47 @@ Hey, Yo!
 ```
 
 ### Hey-yo traps SIGTERM
+By default Hey-yo won't stop with SIGTERM.
+
+If you send a SIGTERM signal to the Hey-Yo container with:
 ```
 $ docker stop YOUR-CONTAINER-ID
 ```
 
-then, you'll see
+then, you'll see the follows and Hey-Yo will keep running.
 ```
 ...
 Hey, Yo!
 Hey, Hey, Hey, Yo!!! 👈 You'll find this line!
+Hey, Yo!
+Hey, Yo!
+...
+```
+
+### Options
+Use environment variables to change the behavior as follows.
+
+#### 1. Let it stop with SIGTERM
+Hey-Yo will respect your SIGTERM signal.
+```
+$ docker run -e LET_ME_DIE=1 toricls/everlasting-hey-yo
+```
+
+#### 2. More message patterns
+```
+$ docker run -e GIVE_ME_PATTERNS=1 toricls/everlasting-hey-yo
+```
+
+then you'll see randomized output.
+```
+...
+Hey, Yo!
+A lot of Hey, Yo!
+Hey, Yo!
+Hey, Yo!
+A lot of Hey, Yo!
+A lot of Hey, Yo!
+Hey, Yo!
 Hey, Yo!
 Hey, Yo!
 ...
