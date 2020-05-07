@@ -1,30 +1,38 @@
 #!/bin/sh
 
-MSG="Hey, Yo!"
+DEFAULT_MSG="Hey, Yo!"
+ANOTHER_MSG="Check It Out! Yo!"
 
 trap IWillNeverDie 15
 
-IWillNeverDie()
-{
-  if [ -z "${LET_ME_DIE}" ]; then
-    echo "Hey, he..."
-    sleep 5
+Output () {
+  MSG="$1"
+  if [ "x${TIMESTAMP}" != "x" ]; then
+    TS=$(date -Iseconds)
+    MSG="${TS} ${MSG}"
+  fi
+  echo "${MSG}"
+}
+
+IWillNeverDie () {
+  if [ "x${LET_ME_DIE}" != "x" ]; then
+    Output "Hey, he..."
+    sleep 3
     exit 0
   else
-    echo "Hey, Hey, ${MSG}!!"
+    Output "Hey, Hey, ${DEFAULT_MSG}!!"
   fi
 }
 
 while true
 do
-  if [ -z "${GIVE_ME_PATTERNS}" ]; then
-    echo "${MSG}"
-  else
+  MSG="${DEFAULT_MSG}"
+  # GIVE_ME_PATTERNS
+  if [ "x${GIVE_ME_PATTERN}" != "x" ]; then
     if [ $((${RANDOM} % 2)) = 1 ]; then
-      echo "A lot of ${MSG}"
-    else
-      echo "${MSG}"
+      MSG="${ANOTHER_MSG}"
     fi
   fi
+  Output "$MSG"
   sleep 1
 done

@@ -82,6 +82,24 @@ Hey, Yo!
 ...
 ```
 
+### 3. `TIMESTAMP`: Logs with timestamp
+
+```shell
+$ docker run -e TIMESTAMP=1 toricls/everlasting-hey-yo
+```
+
+then you'll see timestamp-ed log output.
+
+```shell
+...
+2020-05-07T11:17:05+0000 Hey, Yo!
+2020-05-07T11:17:06+0000 Hey, Yo!
+2020-05-07T11:17:07+0000 Hey, Yo!
+2020-05-07T11:17:08+0000 Hey, Yo!
+2020-05-07T11:17:09+0000 Hey, Yo!
+...
+```
+
 ## Build your own Hey-Yo container
 
 ```shell
