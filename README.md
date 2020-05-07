@@ -1,4 +1,5 @@
 # everlasting-hey-yo
+
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)][license]
 [![Hey, Yo!](https://img.shields.io/badge/Hey-Yo!-orange.svg?style=flat-square)][hey-yo]
 
@@ -7,71 +8,83 @@
 Everlasting "Hey, Yo!" per second
 
 ## Usage
-```
+
+```shell
 $ docker run toricls/everlasting-hey-yo
 ```
 
-then, you'll see everlasting
-```
-Hey, Yo!
-Hey, Yo!
-...
-```
+then, you'll see everlasting "Hey, Yo!" per second.
 
-### Hey-yo traps SIGTERM
-By default Hey-yo won't stop with SIGTERM.
-
-If you send a SIGTERM signal to the Hey-Yo container with:
-```
-$ docker stop YOUR-CONTAINER-ID
-```
-
-then, you'll see the follows and Hey-Yo will keep running.
-```
-...
-Hey, Yo!
-Hey, Hey, Hey, Yo!!! 👈 You'll find this line!
-Hey, Yo!
-Hey, Yo!
-...
-```
-
-### Options
-Use environment variables to change the behavior as follows.
-
-#### 1. Let it stop with SIGTERM
-Hey-Yo will respect your SIGTERM signal.
-```
-$ docker run -e LET_ME_DIE=1 toricls/everlasting-hey-yo
-```
-
-#### 2. More message patterns
-```
-$ docker run -e GIVE_ME_PATTERNS=1 toricls/everlasting-hey-yo
-```
-
-then you'll see randomized output.
-```
-...
-Hey, Yo!
-A lot of Hey, Yo!
-Hey, Yo!
-Hey, Yo!
-A lot of Hey, Yo!
-A lot of Hey, Yo!
-Hey, Yo!
+```shell
 Hey, Yo!
 Hey, Yo!
 ...
 ```
 
 ## So, what is this?
-Hey-yo is meant to know the time difference between SIGTERM sent by `docker stop` and its subsequent SIGKILL, _**roughly**_.
 
-You can use Hey-yo to find whether your container orchestration tool issues docker stop with `--stop` option (or, docker run with `--stop-timeout` option) as expected.
+Hey-yo container is meant to know the duration between `SIGTERM` and its subsequent `SIGKILL`, _**roughly**_.
 
-## Build your own Hey-Yo
+You can use Hey-yo to make sure that your container orchestrator issues `docker stop` with `--stop` option (or, `docker run` with `--stop-timeout` option) as expected.
+
+### Hey-yo traps SIGTERM
+
+Hey-yo container react to a SIGTERM signal but does not stop by default.
+
+Let's try sending a SIGTERM signal to your Hey-Yo container with the following command:
+
+```shell
+$ docker stop YOUR-CONTAINER-ID
 ```
+
+then, you'll see the following line and Hey-Yo container will keep running.
+
+```shell
+...
+Hey, Yo!
+Hey, Hey, Hey, Yo!!! 👈 Hey-Yo container reacted to the SIGTERM signal, and keep running!
+Hey, Yo!
+Hey, Yo!
+...
+```
+
+### Options
+
+You can change its behavior by using environment variables.
+
+#### 1. Let it stop with SIGTERM
+
+Hey-Yo container will respect your SIGTERM signal.
+
+```shell
+$ docker run -e LET_ME_DIE=1 toricls/everlasting-hey-yo
+```
+
+#### 2. More message patterns
+
+```shell
+$ docker run -e GIVE_ME_PATTERNS=1 toricls/everlasting-hey-yo
+```
+
+then you'll see randomized, but meaningless, output.
+
+```shell
+...
+Hey, Yo!
+A lot of Hey, Yo!
+Hey, Yo!
+Hey, Yo!
+A lot of Hey, Yo!
+A lot of Hey, Yo!
+Hey, Yo!
+Hey, Yo!
+Hey, Yo!
+...
+```
+
+## Build your own Hey-Yo container
+
+```shell
 $ docker build -t YOUR-NAME/everlasting-hey-yo .
 $ docker push YOUR-NAME/everlasting-hey-yo
 ```
@@ -90,4 +103,4 @@ $ docker push YOUR-NAME/everlasting-hey-yo
 
 ## Author
 
-[toricls](https://github.com/toricls)
+[Tori](https://github.com/toricls)
