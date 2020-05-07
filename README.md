@@ -50,20 +50,20 @@ Hey, Yo!
 
 ### Options
 
-You can change its behavior by using environment variables.
+You can change its behavior by specifying environment variables.
 
-#### 1. Let it stop with SIGTERM
+#### 1. `LET_ME_DIE`: Let it stop with SIGTERM
 
-Hey-Yo container will respect your SIGTERM signal.
+Hey-Yo container stops with a SIGTERM signal.
 
 ```shell
 $ docker run -e LET_ME_DIE=1 toricls/everlasting-hey-yo
 ```
 
-#### 2. More message patterns
+#### 2. `GIVE_ME_PATTERN`: More message patterns
 
 ```shell
-$ docker run -e GIVE_ME_PATTERNS=1 toricls/everlasting-hey-yo
+$ docker run -e GIVE_ME_PATTERN=1 toricls/everlasting-hey-yo
 ```
 
 then you'll see randomized, but meaningless, output.
