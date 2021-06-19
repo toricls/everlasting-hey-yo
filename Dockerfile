@@ -1,4 +1,4 @@
-FROM alpine:3.9
+FROM busybox
 
 COPY . .
 RUN chmod +x ./hey-yo.sh
