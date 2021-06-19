@@ -109,7 +109,7 @@ $ docker push YOUR-NAME/everlasting-hey-yo
 
 ## Use Docker Hub hosted image instead of Amazon ECR Public
 
-You can use `toricls/everlasting-hey-yo:latest` instead of `public.ecr.aws/toricls/everlasting-hey-yo:latest`.
+You can use [`toricls/everlasting-hey-yo:latest`](https://hub.docker.com/r/toricls/everlasting-hey-yo) instead of `public.ecr.aws/toricls/everlasting-hey-yo:latest`.
 
 ## Contribution
 
