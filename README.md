@@ -10,7 +10,7 @@ Everlasting "Hey, Yo!" per second
 ## Usage
 
 ```shell
-$ docker run toricls/everlasting-hey-yo
+$ docker run public.ecr.aws/toricls/everlasting-hey-yo
 ```
 
 then, you'll see everlasting "Hey, Yo!" per second.
@@ -57,13 +57,13 @@ You can change its behavior by specifying environment variables.
 Hey-Yo container stops with a SIGTERM signal.
 
 ```shell
-$ docker run -e LET_ME_DIE=1 toricls/everlasting-hey-yo
+$ docker run -e LET_ME_DIE=1 public.ecr.aws/toricls/everlasting-hey-yo
 ```
 
 #### 2. `GIVE_ME_PATTERN`: More message patterns
 
 ```shell
-$ docker run -e GIVE_ME_PATTERN=1 toricls/everlasting-hey-yo
+$ docker run -e GIVE_ME_PATTERN=1 public.ecr.aws/toricls/everlasting-hey-yo
 ```
 
 then you'll see randomized, but meaningless, output.
@@ -85,7 +85,7 @@ Hey, Yo!
 ### 3. `TIMESTAMP`: Logs with timestamp
 
 ```shell
-$ docker run -e TIMESTAMP=1 toricls/everlasting-hey-yo
+$ docker run -e TIMESTAMP=1 public.ecr.aws/toricls/everlasting-hey-yo
 ```
 
 then you'll see timestamp-ed log output.
@@ -106,6 +106,10 @@ then you'll see timestamp-ed log output.
 $ docker build -t YOUR-NAME/everlasting-hey-yo .
 $ docker push YOUR-NAME/everlasting-hey-yo
 ```
+
+## Use Docker Hub hosted image instead of Amazon ECR Public
+
+You can use `toricls/everlasting-hey-yo:latest` instead of `public.ecr.aws/toricls/everlasting-hey-yo:latest`.
 
 ## Contribution
 
