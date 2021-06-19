@@ -82,7 +82,7 @@ Hey, Yo!
 ...
 ```
 
-### 3. `TIMESTAMP`: Logs with timestamp
+#### 3. `TIMESTAMP`: Logs with timestamp
 
 ```shell
 $ docker run -e TIMESTAMP=1 public.ecr.aws/toricls/everlasting-hey-yo
